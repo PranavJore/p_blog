@@ -1,0 +1,4 @@
+Flask==2.0.3
+Flask_SQLAlchemy==2.5.1
+pyppeteer==1.0.2
+requests_html==0.10.0
