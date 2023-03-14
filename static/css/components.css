@@ -67,7 +67,8 @@
     aspect-ratio:var(--aspect);
     object-fit:cover;
     object-position: center center;
-    transition:all 3s cubic-bezier(0.19,1,0.22,1);
+    transition:all 3s cubic-bezier(0.07, 0.16, 0.79, 0.64);
+    /* transition:all 3s cubic-bezier(0.19,1,0.22,1); original */
   }
   
   .info{
