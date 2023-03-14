@@ -32,6 +32,10 @@ def home():
 def index():
     return render_template("index.html")
 
+@app.route("/write")
+def writeblog():
+    return render_template("addblog.html")
+
 @app.route("/addBlog", methods=['GET', 'POST'])
 def addBlog():
     title = request.form['name']
