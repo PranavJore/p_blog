@@ -5,13 +5,13 @@ import tracemalloc
 tracemalloc.start()
 
 import asyncio
-async def getNews():
+async def getNews(getUrl):
     import asyncio
     import pyppeteer
 
     from requests_html import HTMLSession, AsyncHTMLSession
-
-    URL = 'https://news.google.com/topstories?hl=en-GB&gl=GB&ceid=GB:en'
+    URL = getUrl
+    # URL = 'https://news.google.com/topstories?hl=en-GB&gl=GB&ceid=GB:en'
     session = HTMLSession()
     session = AsyncHTMLSession()
 
@@ -66,7 +66,8 @@ async def getNews():
             await asyncio.sleep(1)
         except:
             pass
-
+        if len(titleList) is 5:
+            break
     #print the length of the list
 
     # return(newslist)

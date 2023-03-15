@@ -23,6 +23,7 @@ class blog(db.Model):
 @app.route("/news")
 def home():
     # NewsList = getNews()
+
     title, time, auth, link  = asyncio.run(getNews())
     print("links",link)
     combList = list(zip(title, link, auth, time))
@@ -49,6 +50,31 @@ def addBlog():
 @app.route("/blogs/")
 def dispBlog():
     return render_template("showBlog.html", dispBlog = blog.query.all())
+
+# news jinja inheritance starts here
+@app.route("/news/home")
+def newsHome():
+    return render_template("newshome.html")
+@app.route("/news/home/<topic>")
+def newsHomeTop(topic):
+    if topic == 'top':
+        getUrl = 'https://news.google.com/topstories?hl=en-GB&gl=GB&ceid=GB:en'
+    elif topic == 'techonlogy':
+        getUrl = 'https://news.google.com/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRGRqTVhZU0JXVnVMVWRDR2dKSFFpZ0FQAQ?hl=en-GB&gl=GB&ceid=GB%3Aen'
+    elif topic == 'business':
+        getUrl = 'https://news.google.com/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRGx6TVdZU0JXVnVMVWRDR2dKSFFpZ0FQAQ?ceid=GB:en&oc=3'
+    elif topic == 'local':
+        getUrl = 'https://news.google.com/topics/CAAqJQgKIh9DQkFTRVFvSUwyMHZNRFIyYlhBU0JXVnVMVWRDS0FBUAE?ceid=GB:en&oc=3';
+    title, time, auth, link  = asyncio.run(getNews(getUrl))
+    combList = list(zip(title, link, auth, time))
+    return render_template("news_top.html", news = combList, topic=topic)
+@app.route("/news/home/technology")
+def newsHomeTech():
+    getUrl = 'https://news.google.com/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRGRqTVhZU0JXVnVMVWRDR2dKSFFpZ0FQAQ?hl=en-GB&gl=GB&ceid=GB%3Aen'
+    title, time, auth, link  = asyncio.run(getNews(getUrl))
+    print("links",link)
+    combList = list(zip(title, link, auth, time))
+    return render_template("news_top.html", news = combList)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>
+            {% block title %} {% endblock %}The News Site
+        </title>
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/static/css/newshome.css">
+    </head>
+
+    <body>
+        <ul class="menu cf">
+            <li><a href="#">Home</a></li>
+            <!-- <li>
+                    <a href="#">Services</a>
+                    <ul class="submenu">
+            <li><a href="#">Web design</a></li>
+            <li><a href="#">Graphics design</a></li>
+            <li><a href="#">App development</a></li>
+            <li><a href="#">Marketing</a></li>
+            </ul>
+            </li> -->
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+        </ul>
+        <!-- first wrapper left -->
+        <span data-tooltip="Scroll to explore more topics" data-flow="bottom">
+        <div class="wrapper">
+            <div class="cards-container">
+              <div class="card">
+                <div class="image">
+                  <div><a href="/news/home/top"><img src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"></img></a></div>
+                </div>
+                <div class="info">
+                  <h2>Top Stories</h2>
+                  <!-- <p>Have A Glance </p> -->
+                </div>
+              </div>
+              <div class="card">
+                <div class="image">
+                  <div><a href="/news/home/technology"><img src="https://t3.ftcdn.net/jpg/02/19/41/68/360_F_219416862_WVhA1da9kDT4fni0vjQzzbqcAWocQ74m.jpg"></img></a></div>
+                </div>
+                <div class="info">
+                  <h2>Technology</h2>
+                  <!-- <p>Stay Updated</p> -->
+                </div>
+              </div>
+              <div class="card">
+                <div class="image">
+                  <div>
+                    <a href="/news/home/business">
+                        <img src="https://www.reliablesoft.net/wp-content/uploads/2017/03/seo-friendly-blog-posts.jpg"></img>
+                    </a>
+                  </div>
+                </div>
+                <div class="info">
+                  <h2>Business</h2>
+                  <!-- <p>Lets Start Conversation</p> -->
+                </div>
+              </div>
+              <div class="card">
+                <div class="image">
+                  <div>
+                    <a href="/news/home/local">
+                        <img src="https://www.reliablesoft.net/wp-content/uploads/2017/03/seo-friendly-blog-posts.jpg"></img>
+                    </a>
+                  </div>
+                </div>
+                <div class="info">
+                  <h2>Local</h2>
+                  <!-- <p>Lets Start Conversation</p> -->
+                </div>
+              </div>
+            </div>
+        </div></span>        <div id="preloader"></div>
+
+        {% block content %}{% endblock %}
+    </body>
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load", function(){
+            loader.style.display = "none";
+        })
+    </script>
+</html>

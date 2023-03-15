@@ -1,0 +1,55 @@
+{% extends 'newshome.html' %}
+{% block head %}
+{% block title %} {{ topic }} {% endblock %}
+{% endblock head %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+<div class="ag-format-container">
+<div class="ag-courses_box">
+
+  {% for title, link, auth, time in news %}
+
+      <div class="ag-courses_item">
+          <a href="{{ link }}" class="ag-courses-item_link">
+          <div class="ag-courses-item_bg"></div>
+  
+          <div class="ag-courses-item_title">
+              {{ title }}
+              <!-- UI/Web&amp;Graph design for teenagers 11-17&#160;years old -->
+          </div>
+  
+          <div class="ag-courses-item_date-box">
+              {{ auth }}
+              <span class="ag-courses-item_date">
+                  {{ time }}
+              </span>
+          </div>
+          </a>
+      </div>
+  {% endfor %}
+
+
+
+
+  <!-- <div class="ag-courses_item">
+      <a href="#" class="ag-courses-item_link">
+      <div class="ag-courses-item_bg"></div>
+
+      <div class="ag-courses-item_title">
+          See more?
+      </div>
+
+      <div class="ag-courses-item_date-box">
+          Click
+          <span class="ag-courses-item_date">
+          here!
+          </span>
+      </div>
+      </a>
+  </div> -->
+
+</div>
+</div>
+
+{% endblock content %}
