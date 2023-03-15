@@ -10,6 +10,7 @@
     </head>
 
     <body>
+        <div id="preloader"></div>
         <ul class="menu cf">
             <li><a href="#">Home</a></li>
             <!-- <li>
@@ -62,4 +63,10 @@
             </div>
         </div>
     </body>
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load", function(){
+            loader.style.display = "none";
+        })
+    </script>
 </html>

@@ -16,6 +16,7 @@
     letter-spacing:1.6px;
     font-weight: 900;
     font-variant: small-caps;
+    text-shadow: 4px 2px 9px rgba(128, 0, 0, 0.73);
   }
   
   p{
@@ -85,7 +86,9 @@
   
   .card:hover .info{
     transform:translateX(-5px);
-
+  }
+  .card:hover .info .h2{
+    text-shadow: 19px 3px 11px rgba(0, 0, 0, 0.96);
   }
   
   .card:hover img{

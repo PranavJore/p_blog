@@ -1,3 +1,9 @@
+/* Colors */
+:root {
+  --color-default: #f9b234;
+  --color-primary: #eecd95;
+}
+
 .ag-format-container {
   width: 1142px;
   margin: 0 auto;
@@ -44,6 +50,7 @@ body {
 .ag-courses-item_link:hover .ag-courses-show-more{
   visibility: visible;
   font-size: small;
+  color: #FFF;
 }
 .ag-courses-item_link:hover,
 .ag-courses-item_link:hover .ag-courses-item_date {
@@ -86,8 +93,8 @@ body {
 
 .ag-courses-item_bg {
   height: 128px;
-  width: 128px;
-  background-color: #f9b234;
+  width: 230px;
+  background-color: var(--color-default);
 
   z-index: 1;
   position: absolute;
@@ -154,4 +161,90 @@ body {
   .ag-courses-item_date-box {
     font-size: 16px;
   }
+}
+
+#preloader{
+  background: #000 url(/static/img/preloader.gif) no-repeat center center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  transition: all 3.6s ease-out;
+  animation: timer 5s linear infinite;;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #fff;
+  border-color: var(--color-primary) transparent var(--color-primary) transparent;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: animate-preloader 3.5s linear infinite;
+  animation: animate-preloader 3.5s linear infinite;
+  animation-duration: 3s;
+}
+
+@-webkit-keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+  /* custom Scroolbor */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #FFF331 #DFE9EB;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #DFE9EB;
+  border: 1px solid #FFFFFF;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 7px;
+  background-color: var(--color-default);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #8f880a;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #9c8803;
 }

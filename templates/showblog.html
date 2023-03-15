@@ -31,13 +31,13 @@
                 {% for dispBlog in dispBlog %}
                     <div class="ag-courses_item">
                         <a href="#" class="ag-courses-item_link">
-                        <div class="ag-courses-item_bg"></div>
+                        <div class="ag-courses-item_bg" style="border-radius: 27%;  top: -66px; right: -120px;"></div>
                 
-                        <div class="ag-courses-item_title">
+                        <div class="ag-courses-item_title" style="display: flex;">
                             {{ dispBlog.title }} <span class="ag-courses-show-more">Read More...</span>
                         </div>
                 
-                        <div class="ag-courses-item_date-box">
+                        <div class="ag-courses-item_date-box" style="display: flex; align-items: center;">
                             Posted on 
                             <span class="ag-courses-item_date">
                             {{ dispBlog.date }}
