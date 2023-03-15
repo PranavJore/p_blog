@@ -65,6 +65,12 @@ def newsHomeTop(topic):
         getUrl = 'https://news.google.com/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRGx6TVdZU0JXVnVMVWRDR2dKSFFpZ0FQAQ?ceid=GB:en&oc=3'
     elif topic == 'local':
         getUrl = 'https://news.google.com/topics/CAAqJQgKIh9DQkFTRVFvSUwyMHZNRFIyYlhBU0JXVnVMVWRDS0FBUAE?ceid=GB:en&oc=3';
+    elif topic == 'sports':
+        getUrl = 'https://news.google.com/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRFp1ZEdvU0JXVnVMVWRDR2dKSFFpZ0FQAQ?ceid=GB:en&oc=3';
+    elif topic == 'science':
+        getUrl = 'https://news.google.com/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRFp0Y1RjU0JXVnVMVWRDR2dKSFFpZ0FQAQ?ceid=GB:en&oc=3';
+    elif topic == 'entertainment':
+        getUrl = 'https://news.google.com/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNREpxYW5RU0JXVnVMVWRDR2dKSFFpZ0FQAQ?ceid=GB:en&oc=3';
     title, time, auth, link  = asyncio.run(getNews(getUrl))
     combList = list(zip(title, link, auth, time))
     return render_template("news_top.html", news = combList, topic=topic)
