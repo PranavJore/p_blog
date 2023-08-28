@@ -11,7 +11,7 @@ NewsNest is a web application built using Python Flask that allows users to easi
 
 ## Installation
 
-1. Clone this repository: `git clone https://github.com/yourusername/NewsNest.git`
+1. Clone this repository: `git clone https://github.com/PranavJore/p_blog.git`
 2. Navigate to the project directory: `cd NewsNest`
 3. Create a virtual environment: `python -m venv venv`
 4. Activate the virtual environment:
